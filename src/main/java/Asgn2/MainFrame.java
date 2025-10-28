@@ -23,7 +23,9 @@ public class MainFrame extends JFrame {
         setVisible(true);
 
         // initialize components
-        String token = System.getenv("GH_TOKEN");
+        EnvLoader.loadEnv(".env");
+        String token = System.getProperty("GH_TOKEN");
+        System.out.println("Token loaded: " + (token != null && !token.isBlank()));
         gh_operations = new GHOperations(token);
         inputPanel = new InputPanel(this::onOkClicked);
         filePanel = new FilePanel();
