@@ -5,7 +5,9 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.List;
 
-// class for combining all components
+/**
+ * combines all components
+ */
 
 public class MainFrame extends JFrame {
 
@@ -14,6 +16,9 @@ public class MainFrame extends JFrame {
     private final TopBar topBar;
     private final CenterPanel centerPanel;
 
+    /**
+     * constructor
+     */
     public MainFrame() {
 
         // config
@@ -42,6 +47,10 @@ public class MainFrame extends JFrame {
 
     }
 
+    /**
+     * triggers file analysis + renders grid of squares
+     * @param actionEvent triggering event
+     */
     public void onOkClicked(ActionEvent actionEvent) {
 
         String url = topBar.getUrl().trim();  // get url
@@ -78,6 +87,9 @@ public class MainFrame extends JFrame {
 
     }
 
+    /**
+     * clears grid and resets top bar
+     */
     public void clearGrid() {
 
         centerPanel.clearGrid(); // refresh center panel for new GH URL

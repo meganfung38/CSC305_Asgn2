@@ -3,10 +3,16 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.util.stream.Stream;
 
-// loads environment variables (GH token)
+/**
+ * loads environment variables (GH token)
+ */
 
 public class EnvLoader {
 
+    /**
+     * loads all environment variables
+     * @param path path to .env file
+     */
     public static void loadEnv(String path) {
 
         try (Stream<String> lines = Files.lines(Paths.get(path))) {

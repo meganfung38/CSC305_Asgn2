@@ -5,8 +5,12 @@ import java.util.List;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-// grid of squares visualizing size and complexity summary of .java files in GH URL
-// each square represents one .java file
+/**
+ * grid of squares visualizing size and complexity of .java files in GH folder URL
+ * each square in grid represents a single .java file
+ * color --> code complexity
+ * transparency --> file size relative to the largest file
+ */
 
 public class CenterPanel extends JPanel {
 
@@ -16,6 +20,10 @@ public class CenterPanel extends JPanel {
     private int clickedSquare = -1;
     private final BottomPanel bottomPanel;
 
+    /**
+     * constructor
+     * @param bottomPanel reference so we can update with selected file
+     */
     public CenterPanel(BottomPanel bottomPanel) {
 
         // config
@@ -45,6 +53,9 @@ public class CenterPanel extends JPanel {
         addMouseListener(mouseAdapter);
     }
 
+    /**
+     * clears grid of squares
+     */
     public void clearGrid() {
 
         // clear all visualized data on grid and stored metrics
@@ -56,6 +67,10 @@ public class CenterPanel extends JPanel {
 
     }
 
+    /**
+     * clears grid of squares and shows a modal containing a given message
+     * @param message error message
+     */
     public void displayError(String message) {
 
         // clear all visualized data on grid and stored metrics
@@ -66,6 +81,10 @@ public class CenterPanel extends JPanel {
 
     }
 
+    /**
+     * updates files for new GH URL
+     * @param analyzedFiles files represented as objects containing metadata to display
+     */
     public void updateFiles(List<AnalyzedFile> analyzedFiles) {
 
         clearGrid();  // clear all visualized data on grid and stored metrics
@@ -74,6 +93,9 @@ public class CenterPanel extends JPanel {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void paintComponent(Graphics g) {
 
@@ -148,6 +170,11 @@ public class CenterPanel extends JPanel {
 
     }
 
+    /**
+     * helper function to determine color of square using complexity
+     * @param complexity number of control statements
+     * @return color to use for square
+     */
     private Color colorForComplexity(int complexity) {
 
         if (complexity > 10) {
@@ -160,6 +187,12 @@ public class CenterPanel extends JPanel {
 
     }
 
+    /**
+     * helper function to create final fill for squares
+     * @param color color based off complexity
+     * @param transparency transparency based off size
+     * @return final fill adjusted by color and transparency
+     */
     private Color getFill(Color color, float transparency) {
 
         // calculate transparency value
@@ -168,6 +201,9 @@ public class CenterPanel extends JPanel {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getToolTipText(MouseEvent e) {
 
@@ -196,6 +232,10 @@ public class CenterPanel extends JPanel {
 
     }
 
+    /**
+     * helper function to trigger tooltip when user hovers over a square
+     * @param point coordinates of mouse
+     */
     private void squareHover(Point point) {
 
         // trigger tooltip
@@ -203,6 +243,10 @@ public class CenterPanel extends JPanel {
 
     }
 
+    /**
+     * helper function to trigger bottom panel update when user clicks on a square
+     * @param point coordinates of mouse
+     */
     private void squareClicked(Point point) {
 
         // no .java files

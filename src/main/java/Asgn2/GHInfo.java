@@ -1,9 +1,8 @@
 package Asgn2;
 
-// record object that represents a GH user
-// contains metadata about GH user for accessing repo contents
-
 /**
+ * record object that represents a GH user
+ * each record stores metadata about GH user for accessing repo contents
  * @param owner fields
  */
 

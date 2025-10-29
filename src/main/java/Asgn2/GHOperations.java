@@ -5,13 +5,19 @@ import javiergs.tulip.GitHubHandler;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-// helper for accessing GH URLs
+/**
+ * helper for accessing GH folders
+ */
 
 public class GHOperations {
 
     // components
     private final GitHubHandler handler;
 
+    /**
+     * constructor
+     * @param token personal GH token
+     */
     public GHOperations(String token) {
 
         // initialize components
@@ -19,6 +25,12 @@ public class GHOperations {
 
     }
 
+    /**
+     * recursively list all files present from a given GH folder URL
+     * @param url GH folder URL
+     * @return all files as relative paths
+     * @throws IOException if GH API call fails
+     */
     public List<String> listFilesRecursive(String url) throws IOException {
 
         // list all files in subfolders
@@ -26,6 +38,11 @@ public class GHOperations {
 
     }
 
+    /**
+     * parses GH folder URL to extract owner, repo, and ref
+     * @param url GH folder URL
+     * @return an object containing owner, repo, and ref
+     */
     public static GHInfo parseGHURL(String url) {
 
         try {
@@ -50,6 +67,15 @@ public class GHOperations {
 
     }
 
+    /**
+     * retrieves all file contents
+     * @param owner GH owner that owns file
+     * @param repo GH repo the file belongs to
+     * @param path GH file path
+     * @param ref GH branch file is on
+     * @return String representation of file contents
+     * @throws IOException if GH API call fails
+     */
     public String getFileContent(String owner, String repo, String path, String ref) throws IOException {
 
         // return file content

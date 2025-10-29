@@ -4,14 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-// helper class
-// computes size and complexity analysis for .java files
+/**
+ * computes .java file metrics
+ * size --> number of lines (non-empty)
+ * complexity --> number of control statements
+ */
 
 public class FileAnalyzer {
 
     // components
     private final GHOperations ghOperations;
 
+    /**
+     * constructor
+     * @param ghOperations GH operations helper
+     */
     public FileAnalyzer(GHOperations ghOperations) {
 
         // initialize components
@@ -19,6 +26,12 @@ public class FileAnalyzer {
 
     }
 
+    /**
+     * analyzes all files for a GH folder URL
+     * @param GHUrl GH folder URL
+     * @return list of objects containing metadata about file name, size, and complexity
+     * @throws IOException if GH API access fails
+     */
     public List<AnalyzedFile> analyzeFiles(String GHUrl) throws IOException {
 
         // create output list
@@ -55,6 +68,11 @@ public class FileAnalyzer {
 
     }
 
+    /**
+     * helper function to calculate number of control statements in a file
+     * @param content file contents as a string
+     * @return number of control statements present
+     */
     private int countComplexity(String content) {
 
         int count = 0;  // establish a counter

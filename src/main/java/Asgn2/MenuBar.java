@@ -1,13 +1,19 @@
 package Asgn2;
 import javax.swing.*;
 
-// options:
-// file-- open from URL + exit
-// action-- reload + clear
-// help-- about
+/**
+ * options:
+ * file --> open from URL and exit
+ * action --> reload and clear
+ * help --> about
+ */
 
 public class MenuBar extends JMenuBar {
 
+    /**
+     * constructor
+     * @param mainFrame reference to main frame
+     */
     public MenuBar(MainFrame mainFrame) {
 
         // file

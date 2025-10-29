@@ -3,14 +3,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-// text field input
-// labelled GitHub Folder URL (for users to paste GH URLs)
+/**
+ * text field input for GH folder URLs
+ */
 
 public class TopBar extends JPanel {
 
     // components
     private final JTextField urlInput;
 
+    /**
+     * constructor
+     * @param actionListener action triggered
+     */
     public TopBar(ActionListener actionListener) {
 
         // config
@@ -27,12 +32,17 @@ public class TopBar extends JPanel {
 
     }
 
-    // get method
+    /**
+     * getter
+     * @return url input
+     */
     public String getUrl() {
         return urlInput.getText().trim();
     }
 
-    // set method
+    /**
+     * resets text input
+     */
     public  void resetUrl() {
         urlInput.setText("Insert GitHub Folder URL");
     }

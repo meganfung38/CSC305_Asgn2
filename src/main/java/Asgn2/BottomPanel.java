@@ -3,14 +3,18 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.*;
 
-// immutable text area
-// "Selected File Name: <current filename of last clicked square>"
+/**
+ * immutable text area that displays name of currently selected file
+ */
 
 public class BottomPanel extends JPanel {
 
     // components
     private final JTextField selectedFileGrid;
 
+    /**
+     * constructor
+     */
     public  BottomPanel() {
 
         // config
@@ -27,6 +31,10 @@ public class BottomPanel extends JPanel {
 
     }
 
+    /**
+     * updates displayed file name
+     * @param file name of selected file
+     */
     public void setSelectedFileGrid(String file) {
 
         // write to text field
