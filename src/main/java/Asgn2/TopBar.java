@@ -3,20 +3,22 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class InputPanel extends JPanel {
+// text field input
+// labelled GitHub Folder URL (for users to paste GH URLs)
+
+public class TopBar extends JPanel {
 
     // components
     private final JTextField urlInput;
-    private final JButton okButton;
 
-    public InputPanel(ActionListener actionListener) {
+    public TopBar(ActionListener actionListener) {
 
         // config
         setLayout(new BorderLayout(5, 5));
 
         // initialize components
-        urlInput = new JTextField("https://github.com/CSC3100/Tool-Maven/tree/main/src/main/java");
-        okButton = new JButton("Ok");
+        urlInput = new JTextField("Insert GitHub Folder URL");
+        JButton okButton = new JButton("Ok");
         okButton.addActionListener(actionListener);
 
         // add to panel
@@ -28,6 +30,11 @@ public class InputPanel extends JPanel {
     // get method
     public String getUrl() {
         return urlInput.getText().trim();
+    }
+
+    // set method
+    public  void resetUrl() {
+        urlInput.setText("Insert GitHub Folder URL");
     }
 
 }
