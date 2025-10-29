@@ -118,7 +118,8 @@ public class CenterPanel extends JPanel {
             AnalyzedFile file = files.get(i);
 
             // calculate square transparency and color
-            float transparency = Math.min(1f, (float) file.size() / alpha);  // relative size compared to the largest file
+            float ratio = (float) file.size() / alpha;  // relative size compared to the largest file
+            float transparency = 0.25f + 0.75f * (float) Math.pow(ratio, 0.5);  // transparency control
             Color color = colorForComplexity(file.complexity());  // color in respect to file complexity
             Color fill = getFill(color, transparency);  // final square fill config
 
