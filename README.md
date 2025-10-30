@@ -3,7 +3,7 @@
 
 ## Input 
 
---> public GitHub repo
+**public GitHub repo**
 
 
 ## Output 

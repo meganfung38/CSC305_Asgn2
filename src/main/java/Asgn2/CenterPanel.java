@@ -33,7 +33,7 @@ public class CenterPanel extends JPanel {
         // initialize components
         this.bottomPanel = bottomPanel;
 
-        // enable mouse clicking events
+        // enble mouse clicking events
         MouseAdapter mouseAdapter = new MouseAdapter() {
 
             @Override
