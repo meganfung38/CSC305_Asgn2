@@ -1,6 +1,11 @@
 # Assignment 02. CodeViz 2.0
 
 
+## Class Diagram
+
+**[Lucid Chart Diagram](https://lucid.app/lucidchart/b5262268-9a3d-4d7e-9e72-029d0d42ca75/edit?viewport_loc=-1291%2C-799%2C3485%2C2698%2C0_0&invitationId=inv_10fffdfd-e760-4d75-a3a8-b084c06b8dcf)**
+
+
 ## Input 
 
 **public GitHub repo**
